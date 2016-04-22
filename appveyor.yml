@@ -13,7 +13,7 @@
   notifications:
     provider: Webhook
     method: GET
-    url: https://shrouded-fjord-84247.herokuapp.com/deployment?project={{build.projectName}}&buildno={{build.buildNumber}}&env=dev
+    url: https://shrouded-fjord-84247.herokuapp.com/deployment?project={{build.ProjectName}}&buildno={{build.BuildNumber}}&env=dev
 
 #Staging
 -
@@ -30,7 +30,7 @@
   notifications:
     provider: Webhook
     method: GET
-    url: https://shrouded-fjord-84247.herokuapp.com/deployment?project={{build.projectName}}&buildno={{build.buildNumber}}&env=staging
+    url: https://shrouded-fjord-84247.herokuapp.com/deployment?project={{build.ProjectName}}&buildno={{build.BuildNumber}}&env=staging
 
 #Prod
 -
@@ -47,5 +47,5 @@
   notifications:
     provider: Webhook
     method: GET
-    url: https://shrouded-fjord-84247.herokuapp.com/deployment?project={{build.projectName}}&buildno={{build.buildNumber}}&env=production
+    url: https://shrouded-fjord-84247.herokuapp.com/deployment?project={{build.ProjectName}}&buildno={{build.BuildNumber}}&env=production
 
