@@ -1,9 +1,14 @@
+install:
+  - echo %myvar%
+
 #Dev
 -
   shallow_clone: true
   branches:
     only:
       - develop
+  environment:
+    myvar: 'this is dev!'
   init:
     - echo Init Dev
   build_script:
