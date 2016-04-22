@@ -1,0 +1,48 @@
+#Dev
+-
+  shallow_clone: true
+  branches:
+    only:
+      develop
+  init:
+    - echo Init Dev
+  build_script:
+    - echo Building dev...
+  test_script:
+    - echo Testing dev...
+  deploy:
+    provider: Webhook
+    url: https://shrouded-fjord-84247.herokuapp.com/deployment?project=$(appveyor_project_name)&buildno=$(appveyor_build_version)&env=dev
+
+#Staging
+-
+  shallow_clone: true
+  branches:
+    only:
+      staging
+  init:
+    - echo Init Staging
+  build_script:
+    - echo Building staging...
+  test_script:
+    - echo Testing staging...
+  deploy:
+    provider: Webhook
+    url: https://shrouded-fjord-84247.herokuapp.com/deployment?project=$(appveyor_project_name)&buildno=$(appveyor_build_version)&env=staging
+
+#Prod
+-
+  shallow_clone: true
+  branches:
+    only:
+      master
+  init:
+    - echo Init Productions
+  build_script:
+    - echo Building production...
+  test_script:
+    - echo Testing production...
+  deploy:
+    provider: Webhook
+    url: https://shrouded-fjord-84247.herokuapp.com/deployment?project=$(appveyor_project_name)&buildno=$(appveyor_build_version)&env=production
+
