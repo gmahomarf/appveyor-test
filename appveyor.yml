@@ -10,8 +10,9 @@
     - echo Building dev...
   test_script:
     - echo Testing dev...
-  deploy:
+  notifications:
     provider: Webhook
+    method: GET
     url: https://shrouded-fjord-84247.herokuapp.com/deployment?project=$(appveyor_project_name)&buildno=$(appveyor_build_version)&env=dev
 
 #Staging
@@ -26,8 +27,9 @@
     - echo Building staging...
   test_script:
     - echo Testing staging...
-  deploy:
+  notifications:
     provider: Webhook
+    method: GET
     url: https://shrouded-fjord-84247.herokuapp.com/deployment?project=$(appveyor_project_name)&buildno=$(appveyor_build_version)&env=staging
 
 #Prod
@@ -42,7 +44,8 @@
     - echo Building production...
   test_script:
     - echo Testing production...
-  deploy:
+  notifications:
     provider: Webhook
+    method: GET
     url: https://shrouded-fjord-84247.herokuapp.com/deployment?project=$(appveyor_project_name)&buildno=$(appveyor_build_version)&env=production
 
